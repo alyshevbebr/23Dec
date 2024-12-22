@@ -1,0 +1,802 @@
+//Зад. 1
+(int a, int b, int c) = (3, 4, 5);
+double V = a * b * c;
+double S = 2 * (a * b + b * c + a * c);
+Console.WriteLine($"Обьем - {V}, а площадь поверхности - {S} ");
+//Зад. 2
+(int a, int b) = (10, 5);
+Console.WriteLine($"Среднее арифмет. {(a + b) / 2}");
+//Зад. 3
+Console.WriteLine("Введите R: ");
+int R = Convert.ToInt32(Console.ReadLine());
+double L = 2 * (3.14 * R);//длина окружности 
+double S = 3.14 * (Math.Pow(R, 2));//Площадь круга
+Console.WriteLine($"Длина окружности: {L}. Площадь круга: {S}");
+//Зад. 4
+(int a, int b) = (10, 5); //Уже даны 
+Console.WriteLine($"Среднее геом. {Math.Sqrt(a * b)}");
+//Зад. 5
+(int num1, int num2) = (5, 3);
+(double num1_kv, double num2_kv) = (Math.Pow(num1, 2), Math.Pow(num2, 2));//Сделано для удобства вывода результата
+Console.WriteLine($"Сумма - {num1_kv + num2_kv}\nРазность - {num1_kv - num2_kv}\nПроизведение - {num1_kv * num2_kv}\nЧастное - {(int)(num1_kv / num2_kv)}");//Частное это результат деления, остаток не нужен поэтому int
+//Зад. 6
+//Одно и тоже что и Зад. 5
+//Зад. 7
+(int num1, int num2) = (-5, -3);
+(double num1_abs, double num2_abs) = (Math.Abs(num1),Math.Abs(num2));
+Console.WriteLine($"Сумма - {num1_abs + num2_abs}\nРазность - {num1_abs - num2_abs}\nПроизведение - {num1_abs * num2_abs}\nЧастное- {(int)(num1_abs / num2_abs)}");
+// Задача 8: Круги и кольцо
+
+    static void Task8()
+
+    {
+
+        Console.Write("Введите радиус первого круга (R1): ");
+
+        double R1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите радиус второго круга (R2): ");
+
+        double R2 = Convert.ToDouble(Console.ReadLine());
+
+
+        const double PI = 3.14;
+
+        double S1 = PI * Math.Pow(R1, 2);
+
+        double S2 = PI * Math.Pow(R2, 2);
+
+        double S3 = S1 - S2;
+
+
+        Console.WriteLine($"Площадь первого круга (S1): {S1:F2}");
+
+        Console.WriteLine($"Площадь второго круга (S2): {S2:F2}");
+
+        Console.WriteLine($"Площадь кольца (S3): {S3:F2}");
+
+    }
+
+
+    // Задача 9: Длина окружности и площадь круга
+
+    static void Task9()
+
+    {
+
+        Console.Write("Введите длину окружности (L): ");
+
+        double L = Convert.ToDouble(Console.ReadLine());
+
+
+        const double PI = 3.14;
+
+        double R = L / (2 * PI);
+
+        double S = PI * Math.Pow(R, 2);
+
+
+        Console.WriteLine($"Радиус круга (R): {R:F2}");
+
+        Console.WriteLine($"Площадь круга (S): {S:F2}");
+
+    }
+
+
+    // Задача 10: Площадь круга, диаметр и длина окружности
+
+    static void Task10()
+
+    {
+
+        Console.Write("Введите площадь круга (S): ");
+
+        double S = Convert.ToDouble(Console.ReadLine());
+
+
+        const double PI = 3.14;
+
+        double R = Math.Sqrt(S / PI);
+
+        double D = 2 * R;
+
+        double L = 2 * PI * R;
+
+
+        Console.WriteLine($"Диаметр круга (D): {D:F2}");
+
+        Console.WriteLine($"Длина окружности (L): {L:F2}");
+
+    }
+
+
+    // Задача 11: Расстояние между точками на числовой оси
+
+    static void Task11()
+
+    {
+
+        Console.Write("Введите координату x1: ");
+
+        double x1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите координату x2: ");
+
+        double x2 = Convert.ToDouble(Console.ReadLine());
+
+
+        double distance = Math.Abs(x2 - x1);
+
+        Console.WriteLine($"Расстояние между точками: {distance:F2}");
+
+    }
+
+
+    // Задача 12: Сумма и произведение трех чисел
+
+    static void Task12()
+
+    {
+
+        Console.Write("Введите первое число: ");
+
+        int num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите второе число: ");
+
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите третье число: ");
+
+        int num3 = Convert.ToInt32(Console.ReadLine());
+
+
+        int sum = num1 + num2 + num3;
+
+        int product = num1 * num2 * num3;
+
+
+        Console.WriteLine($"Сумма: {sum}");
+
+        Console.WriteLine($"Произведение: {product}");
+
+    }
+
+
+    // Задача 13: Сумма цифр трехзначного числа
+
+    static void Task13()
+
+    {
+
+        Console.Write("Введите трехзначное число: ");
+
+        int number = Convert.ToInt32(Console.ReadLine());
+
+
+        int hundreds = number / 100;
+
+        int tens = (number % 100) / 10;
+
+        int ones = number % 10;
+
+
+        int digitSum = hundreds + tens + ones;
+
+        Console.WriteLine($"Сумма цифр: {digitSum}");
+
+    }
+
+
+    // Задача 14: Перестановка цифр трехзначного числа
+
+    static void Task14()
+
+    {
+
+        Console.Write("Введите трехзначное число: ");
+
+        int number = Convert.ToInt32(Console.ReadLine());
+
+
+        int a = number / 100;
+
+        int b = (number % 100) / 10;
+
+        int c = number % 10;
+
+
+        Console.WriteLine($"{a}{b}{c}");
+
+        Console.WriteLine($"{a}{c}{b}");
+
+        Console.WriteLine($"{b}{a}{c}");
+
+        Console.WriteLine($"{b}{c}{a}");
+
+        Console.WriteLine($"{c}{a}{b}");
+
+        Console.WriteLine($"{c}{b}{a}");
+
+    }
+
+
+    // Задача 15: Максимальное, минимальное и их сумма
+
+    static void Task15()
+
+    {
+
+        Console.Write("Введите первое число: ");
+
+        double a = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите второе число: ");
+
+        double b = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите третье число: ");
+
+        double c = Convert.ToDouble(Console.ReadLine());
+
+
+        double max = Math.Max(Math.Max(a, b), c);
+
+        double min = Math.Min(Math.Min(a, b), c);
+
+        double sumMaxMin = max + min;
+
+
+        Console.WriteLine($"Максимальное число: {max}");
+
+        Console.WriteLine($"Минимальное число: {min}");
+
+        Console.WriteLine($"Сумма максимального и минимального: {sumMaxMin}");
+
+    }
+
+
+    // Продолжение методов для остальных задач...
+
+    // (Оставлю место для остальных методов)
+
+
+    // Заглуш ```csharp
+
+    // Задача 16: Циклическая перестановка четырехзначного числа
+
+    static void Task16()
+
+    {
+
+        Console.Write("Введите четырехзначное число: ");
+
+        int number = Convert.ToInt32(Console.ReadLine());
+
+
+        int thousands = number / 1000;
+
+        int hundreds = (number % 1000) / 100;
+
+        int tens = (number % 100) / 10;
+
+        int ones = number % 10;
+
+
+        Console.WriteLine($"{hundreds}{tens}{ones}{thousands}");
+
+        Console.WriteLine($"{hundreds}{ones}{thousands}{tens}");
+
+        Console.WriteLine($"{tens}{ones}{thousands}{hundreds}");
+
+        Console.WriteLine($"{tens}{thousands}{hundreds}{ones}");
+
+        Console.WriteLine($"{ones}{thousands}{hundreds}{tens}");
+
+        Console.WriteLine($"{ones}{tens}{hundreds}{thousands}");
+
+    }
+
+
+    // Задача 17: Вычисление функции
+
+    static void Task17()
+
+    {
+
+        Console.Write("Введите значение x: ");
+
+        double x = Convert.ToDouble(Console.ReadLine());
+
+
+        double y = 3 * Math.Pow(x, 6) - 6 * Math.Pow(x, 2) - 7;
+
+        Console.WriteLine($"Значение функции y: {y}");
+
+    }
+
+
+    // Задача 18: Возрастная категория
+
+    static void Task18()
+
+    {
+
+        Console.Write("Введите ваш возраст: ");
+
+        int age = Convert.ToInt32(Console.ReadLine());
+
+
+        if (age < 18)
+
+            Console.WriteLine("Вы несовершеннолетний");
+
+        else if (age <= 65)
+
+            Console.WriteLine("Вы взрослый");
+
+        else
+
+            Console.WriteLine("Вы пожилой человек");
+
+    }
+
+
+    // Задача 19: Количество парт для классов
+
+    static void Task19()
+
+    {
+
+        Console.Write("Введите количество учащихся в первом классе: ");
+
+        int class1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите количество учащихся во втором классе: ");
+
+        int class2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите количество учащихся в третьем классе: ");
+
+        int class3 = Convert.ToInt32(Console.ReadLine());
+
+
+        int totalStudents = class1 + class2 + class3;
+
+        int desksNeeded = (totalStudents + 1) / 2; // Максимум 2 ученика за партой
+
+
+        Console.WriteLine($"Необходимое количество парт: {desksNeeded}");
+
+    }
+
+
+    // Задача 20: Проверка делимости
+
+    static void Task20()
+
+    {
+
+        Console.Write("Введите первое число (a): ");
+
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите второе число (b): ");
+
+        int b = Convert.ToInt32(Console.ReadLine());
+
+
+        if (a % b == 0)
+
+            Console.WriteLine("Первое число делится на второе число без остатка");
+
+        else
+
+            Console.WriteLine("Первое число делится на второе число с остатком");
+
+    }
+
+
+    // Задача 21: Определение времени года
+
+    static void Task21()
+
+    {
+
+        Console.Write("Введите номер месяца (1-12): ");
+
+        int month = Convert.ToInt32(Console.ReadLine());
+
+
+        switch (month)
+
+        {
+
+            case 12:
+
+            case 1:
+
+            case 2:
+
+                Console.WriteLine("Зима");
+
+                break;
+
+            case 3:
+
+            case 4:
+
+            case 5:
+
+                Console.WriteLine("Весна");
+
+                break;
+
+            case 6:
+
+            case 7:
+
+            case 8:
+
+                Console.WriteLine("Лето");
+
+                break;
+
+            case 9:
+
+            case 10:
+
+            case 11:
+
+                Console.WriteLine("Осень");
+
+                break;
+
+            default:
+
+                Console.WriteLine("Некорректный месяц");
+
+                break;
+
+        }
+
+    }
+
+
+    // Задача 22: Возраст в годах
+
+    static void Task22()
+
+    {
+
+        Console.Write("Введите ваш возраст (1-99): ");
+
+        int n = Convert.ToInt32(Console.ReadLine());
+
+
+        string suffix = "лет";
+
+        if (n % 10 == 1 && n % 100 != 11) suffix = "год";
+
+        else if ((n % 10 >= 2 && n % 10 <= 4) && (n % 100 < 10 || n % 100 >= 20)) suffix = "года";
+
+
+        Console.WriteLine($"Мне {n} {suffix}");
+
+    }
+
+
+    // Задача 23: Окончание слова "гриб"
+
+    static ```csharp
+
+    void Task23()
+
+    {
+
+        Console.Write("Введите количество грибов (k): ");
+
+        int k = Convert.ToInt32(Console.ReadLine());
+
+
+        string suffix = "гриб";
+
+        if (k % 10 == 1 && k % 100 != 11) suffix = "гриб";
+
+        else if ((k % 10 >= 2 && k % 10 <= 4) && (k % 100 < 10 || k % 100 >= 20)) suffix = "гриба";
+
+        else suffix = "грибов";
+
+
+        Console.WriteLine($"Мы нашли {k} {suffix} в лесу");
+
+    }
+
+
+    // Задача 24: Вычисление функции
+
+    static void Task24()
+
+    {
+
+        Console.Write("Введите значение x: ");
+
+        double x = Convert.ToDouble(Console.ReadLine());
+
+
+        double y = 4 * Math.Pow(x - 3, 6) - 7 * Math.Pow(x - 3, 2) + 2;
+
+        Console.WriteLine($"Значение функции y: {y}");
+
+    }
+
+
+    // Задача 25: Вывод трех чисел
+
+    static void Task25()
+
+    {
+
+        Console.Write("Введите первое число: ");
+
+        int num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите второе число: ");
+
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите третье число: ");
+
+        int num3 = Convert.ToInt32(Console.ReadLine());
+
+
+        Console.WriteLine($"{num1}  {num2}  {num3}");
+
+    }
+
+
+    // Задача 26: Обмен значений двух переменных
+
+    static void Task26()
+
+    {
+
+        Console.Write("Введите первое целое число: ");
+
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите второе целое число: ");
+
+        int b = Convert.ToInt32(Console.ReadLine());
+
+
+        // Обмен значениями
+
+        int temp = a;
+
+        a = b;
+
+        b = temp;
+
+
+        Console.WriteLine($"После обмена: a = {a}, b = {b}");
+
+    }
+
+
+    // Задача 27: Перестановка цифр двузначного числа
+
+    static void Task27()
+
+    {
+
+        Console.Write("Введите двузначное число: ");
+
+        int number = Convert.ToInt32(Console.ReadLine());
+
+
+        int tens = number / 10;
+
+        int ones = number % 10;
+
+
+        Console.WriteLine($"Перестановка цифр: {ones}{tens}");
+
+    }
+
+
+    // Задача 28: Яблоки для школьников
+
+    static void Task28()
+
+    {
+
+        Console.Write("Введите количество школьников (n): ");
+
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите количество яблок (k): ");
+
+        int k = Convert.ToInt32(Console.ReadLine());
+
+
+        int applesPerStudent = k / n;
+
+        Console.WriteLine($"Каждому школьнику достанется {applesPerStudent} яблок.");
+
+    }
+
+
+    // Задача 29: Наибольшее из трех чисел
+
+    static void Task29()
+
+    {
+
+        Console.Write("Введите первое число: ");
+
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите второе число: ");
+
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите третье число: ");
+
+        int c = Convert.ToInt32(Console.ReadLine());
+
+
+        int max = Math.Max(Math.Max(a, b), c);
+
+        Console.WriteLine($"Наибольшее число: {max}");
+
+    }
+
+
+    // Задача 30: Проверка четности числа
+
+    static void Task30()
+
+    {
+
+        Console.Write("Введите целое число: ");
+
+        int n = Convert.ToInt32(Console.ReadLine());
+
+
+        if (n % 2 == 0)
+
+            Console.WriteLine("Число четное");
+
+        else
+
+            Console.WriteLine("Число нечетное");
+
+    }
+
+
+    // Задача 31: Вывод чисел от 1 до N
+
+    static void Task31()
+
+    {
+
+        Console.Write("Введите целое число N: ");
+
+        int N = Convert.ToInt32(Console.ReadLine());
+
+
+        for (int i = 1; i <= N; i++)
+
+        {
+
+            Console.Write(i + " ");
+
+        }
+
+        Console.WriteLine();
+
+    }
+
+
+    // Задача 32: Подсчет букв в строке
+
+    static void Task32()
+
+    {
+
+        Console.Write("Введите строку: ");
+
+        string input = Console.ReadLine();
+
+        int letterCount = input.Length;
+
+
+        Console.WriteLine($"Количество букв в строке: { letterCount}");
+
+    }
+
+
+    // Задача 33: Вычисление факториала
+
+    static void Task33()
+
+    {
+
+        Console.Write("Введите целое число для вычисления факториала: ");
+
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        long factorial = 1;
+
+
+        for (int i = 1; i <= n; i++)
+
+        {
+
+            factorial *= i;
+
+        }
+
+
+        Console.WriteLine($"Факториал {n}! = {factorial}");
+
+    }
+
+
+    // Задача 34: Сумма n чисел
+
+    static void Task34()
+
+    {
+
+        Console.Write("Введите количество чисел для суммирования: ");
+
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        int sum = 0;
+
+
+        for (int i = 0; i < n; i++)
+
+        {
+
+            Console.Write($"Введите число {i + 1}: ");
+
+            sum += Convert.ToInt32(Console.ReadLine());
+
+        }
+
+
+        Console.WriteLine($"Сумма введенных чисел: {sum}");
+
+    }
+
+
+    // Задача 35: Произведение чисел на отрезке
+
+    static void Task35()
+
+    {
+
+        Console.Write("Введите первое целое число (a): ");
+
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите второе целое число (b): ");
+
+        int b = Convert.ToInt32(Console.ReadLine());
+
+
+        int product = 1;
+
+        for (int i = a; i <= b; i++)
+
+        {
+
+            product *= i;
+
+        }
+
+
+        Console.WriteLine($"Произведение чисел от {a} до {b}: {product}");
